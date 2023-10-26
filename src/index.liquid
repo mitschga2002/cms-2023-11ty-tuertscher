@@ -1,58 +1,7 @@
+---
+layout: primary
+---
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcus G. Miller | Choreographer</title>
-    <link rel="stylesheet" href="/style.css">
-    <meta name="description"
-        content="Marcus G. Miller: Innovative choreographer pushing boundaries through movement and creativity.">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="afari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Marcus G. Miller | Choreographer">
-    <meta property="og:description"
-        content="Marcus G. Miller: Innovative choreographer pushing boundaries through movement and creativity.">
-    <meta property="og:image" content="images/header-bg.jpg">
-    <meta property="og:image:alt" content="Marcus G. Miller dancing">
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-</head>
-<body>
-    <header>
-        <div class="nav-wrapper">
-            <a href="/">
-                <h1><span>Marcus G. Miller</span> | Choreographer</h1>
-            </a>
-            <nav>
-                <button id="hamburger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </button>
-                <ul>
-                    <li><a href="#workshops">Workshops</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#news">News</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="hero-wrapper">
-            <h2 class='h2mobile'>I believe <br> you can dance.</h2>
-            <h2 class='h2'>I belive you can dance.</h2>
-            <a href="#" class="button">Book Workshop</a>
-        </div>
-    </header>
-
-    
 <main>
     <section id="workshops">
         <p class="super-headline">Find your entrance level & book a workshop with Marcus</p>
@@ -168,46 +117,16 @@
         <p class="super-headline">Making waves since 2004</p>
         <h2>In the News</h2>
         <div class="slider">
-            
-            
+            {% assign news = collections.news | reverse %}
+            {% for n in news limit:3 %}
             <article>
-                <h3>Sydney Dance Festival 2022</h3>
-                <img src='/images/dance_festival_performance.jpg' alt='Marcus performing at the Sydney dance festival 2022'>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <a href='/news/festival/' class="button">Read more</a>
+                <h3>{{ n.data.title }}</h3>
+                <img src='/images/{{n.data.image}}' alt='{{ n.data.alt }}'>
+                <p>{{ n.data.excerpt }}</p>
+                <a href='{{ n.url }}' class="button">Read more</a>
             </article>
-            
-            <article>
-                <h3>'Dance Pool' 2023 sold out!</h3>
-                <img src='/images/dance_pool_group_pic.jpeg' alt='Group picture of Dance Pool'>
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <a href='/news/soldout/' class="button">Read more</a>
-            </article>
-            
-            <article>
-                <h3>New London Workshop Oct. 2025</h3>
-                <img src='/images/workshop_snapshot.jpeg' alt='Marcus at a workshop'>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <a href='/news/workshop/' class="button">Read more</a>
-            </article>
-            
+            {% endfor %}
 
         </div>
     </section>
 </main>
-
-    <footer>
-        <div>
-            <h4>Thank you for your interest in Art!</h4>
-            <p>© 2004 – 2023 Marcus G. Miller</p>
-        </div>
-        <a href="#">Imprint & Privacy</a>
-    </footer>
-    <script src='./main.js'></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
-        });
-    </script>
-</body>
-
-</html>

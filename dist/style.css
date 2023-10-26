@@ -391,11 +391,14 @@ header .button {
   #workshops {
     margin: 130px 20px 130px 10px;
   }
+  #workshops .level-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
   #workshops .level {
     min-height: 285px;
-    margin: 20px;
-    margin-left: 20vw;
-    margin-right: 0;
+    max-width: 80%;
     margin-top: 60px;
     flex-direction: row;
   }
@@ -430,11 +433,11 @@ header .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15%;
-    margin: 5%;
+    padding: 15% 12%;
+    margin: 5px;
   }
   #workshops .level .circle img {
-    width: 90%;
+    width: 80%;
   }
   #workshops .level .text-wrapper {
     margin: 20px;
@@ -474,9 +477,8 @@ header .button {
     width: 70%;
   }
   #workshops .level:nth-child(2n) {
-    margin-left: 10vw;
-    margin-right: 5vw;
     margin-top: 20px;
+    align-self: center;
   }
   #workshops .level:nth-child(2n) .quote-wrapper {
     padding-top: 0;
@@ -502,8 +504,7 @@ header .button {
     top: -10px;
   }
   #workshops .level:last-child {
-    margin-left: 0;
-    margin-right: 10vw;
+    align-self: flex-start;
     margin-top: 20px;
   }
   #workshops .level:last-child .circle {
