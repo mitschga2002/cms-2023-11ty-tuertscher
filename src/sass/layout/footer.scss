@@ -1,0 +1,60 @@
+footer {
+  font-family: $font-family;
+  background-color: $secondary;
+  padding: 20px;
+  padding-bottom: 30px;
+
+  h4 {
+    color: white;
+    font-weight: 300;
+  }
+  p {
+    color: white;
+    font-weight: 300;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $primary;
+    font-weight: 300;
+    display: block;
+  }
+}
+
+@include breakpoint(0, $mobile) {
+  footer {
+    h4 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    padding-bottom: 60px;
+
+    h4 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    a {
+      font-size: 20px;
+    }
+  }
+}

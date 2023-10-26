@@ -1,0 +1,79 @@
+@include breakpoint(0, $mobile) {
+  header {
+    #hamburger {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 50;
+      .line {
+        background-color: $primary;
+        display: block;
+        margin: 4px;
+        width: 23px;
+        height: 1px;
+        transition: 0.4s;
+        transform: translate(50deg);
+        z-index: 40;
+      }
+      .line:nth-child(2) {
+        width: 16px;
+      }
+    }
+
+    #hamburger.open {
+      position: relative;
+      z-index: 50;
+      .line:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 3px);
+      }
+      .line:nth-child(2) {
+        transform: rotate(-45deg) translate(3px, -3px);
+        width: 23px;
+      }
+    }
+
+    nav.open {
+      ul {
+        z-index: 30;
+        position: absolute;
+        display: flex;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        height: 500vh;
+        padding: 20px;
+        padding-top: 50px;
+        background-color: $secondary;
+        min-width: max-content;
+        li {
+          margin: 20px;
+        }
+
+        a {
+          font-size: 22px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    ul {
+      display: none;
+      flex-direction: column;
+
+      a {
+        text-align: right;
+      }
+    }
+
+    .visible {
+      display: block;
+    }
+  }
+}
+
+#hamburger {
+  display: none;
+}

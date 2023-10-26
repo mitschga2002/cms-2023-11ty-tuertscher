@@ -1,0 +1,42 @@
+main {
+  font-family: $font-family;
+
+  .super-headline {
+    font-weight: 600;
+    color: $secondary;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-weight: 300;
+    color: $primary;
+  }
+}
+
+//Mobile
+@include breakpoint(0, $mobile) {
+  main {
+    .super-headline {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+
+//Desktop
+@include breakpoint($mobile + 1) {
+  main {
+    .super-headline {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 45px;
+    }
+  }
+}
